@@ -1,0 +1,33 @@
+parameters:
+    noxlogic_common_bundle.converter.listener.class: NoxLogic\Bundle\MultiParamBundle\EventListener\MultiParamConverterListener
+    noxlogic_common_bundle.converter.doctrine.class: NoxLogic\Bundle\MultiParamBundle\Request\ParamConverter\MultiParamConverter
+    noxlogic_common_bundle.converter.manager.class: NoxLogic\Bundle\MultiParamBundle\Request\ParamConverter\MultiParamConverterManager
+
+    noxlogic_common_bundle.controller.listener.class: NoxLogic\Bundle\MultiParamBundle\EventListener\ControllerListener
+
+services:
+    #
+    # This is the annotation listener and must be placed PRIOR to the MultiParam converter listener
+    # OR have a higher priority (or both).
+    #
+    noxlogic_common_bundle.controller.listener:
+        class: %noxlogic_common_bundle.controller.listener.class%
+        arguments: [ @annotation_reader ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController, priority: 11 }
+
+    noxlogic_common_bundle.converter.listener:
+        class: %noxlogic_common_bundle.converter.listener.class%
+        arguments: [ @noxlogic_common_bundle.converter.manager ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController, priority: 10 }
+
+    noxlogic_common_bundle.converter.manager:
+        class: %noxlogic_common_bundle.converter.manager.class%
+
+    noxlogic_common_bundle.converter.doctrine:
+        class: %noxlogic_common_bundle.converter.doctrine.class%
+        arguments: [ @?doctrine ]
+        tags:
+            - { name: request.multi_param_converter }
+

@@ -1,0 +1,22 @@
+{
+    "name": "noxlogic/multiparam-bundle",
+    "description": "This bundle provides the multiParamConverter annotation",
+    "keywords": ["annotations"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joshua Thijssen",
+            "email": "jthijssen@noxlogic.nl"
+        }
+    ],
+    "require": {
+        "sensio/framework-extra-bundle": "2.0.x",
+        "symfony/framework-bundle": "2.0.*",
+        "doctrine/common": ">=2.1,<2.4-dev"
+    },
+    "autoload": {
+        "psr-0": { "NoxLogic\\Bundle\\MultiParamBundle": "" }
+    },
+    "target-dir": "NoxLogic/Bundle/MultiParamBundle"
+}
