@@ -1,6 +1,6 @@
 {
     "name": "noxlogic/multiparam-bundle",
-    "description": "This bundle provides the multiParamConverter annotation",
+    "description": "This bundle provides the multiParamConverter annotation for symfony2 projects",
     "keywords": ["annotations"],
     "type": "symfony-bundle",
     "license": "MIT",
