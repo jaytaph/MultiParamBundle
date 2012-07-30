@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "sensio/framework-extra-bundle": "2.0.x",
-        "symfony/framework-bundle": "2.0.*",
+        "sensio/framework-extra-bundle": "2.1.x-dev",
+        "symfony/framework-bundle": "2.1.x-dev",
         "doctrine/common": ">=2.1,<2.4-dev"
     },
     "autoload": {
