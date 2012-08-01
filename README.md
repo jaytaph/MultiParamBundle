@@ -20,13 +20,13 @@ Add the MultiParamBundle in your composer.json:
 ```js
 {
     "require": {
-        "noxlogic/multiparam-bundle": "master"
+        "noxlogic/multiparam-bundle": "2.1.*"
     }
 }
 ```
 
 **Warning:**
-> if you use Symfony 2.1 the require value should be master, for Symfony 2.0 use ?? [TODO]
+> if you use Symfony 2.0 the require value should be 2.0.*
 
 Now tell composer to download the bundle by running the command:
 
